@@ -1,25 +1,19 @@
-from django.db.models import fields
 from rest_framework import serializers
-from ..models import Movie, Ott
+from ..models import Movie, Movie_Ott
 
-
-class MovieListSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Movie
-        fields = ('id', 'title',)
 
 class MovieSerializer(serializers.ModelSerializer):
-
-    class OttSerializer(serializers.ModelSerializer):
+    class Movie_OttSerializer(serializers.ModelSerializer):
         class Meta:
-            model = Ott
-            fields = ('id', 'name',)
-    
-    # valid 검사
-    title = serializers.CharField(min_length=1, max_length=200)
-    otts = OttSerializer(many=True)
+            model = Movie_Ott
+            fields = (
+                "id",
+                "ott_id",
+                "ott_url",
+            )
+
+    movie_movies = Movie_OttSerializer(many=True)
+
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'poster_path', 'otts',)
-
+        fields = ("id", "title", "poster_path", "movie_movies")
