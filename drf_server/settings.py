@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ukp+@6ch(@q)y996z+n*(16_5pl@k_b=*2_5z9x1h0rty5*%4x"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,7 +58,6 @@ INSTALLED_APPS = [
 # CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
     # django cors middleware setting
     # "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -68,7 +67,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
 
 ROOT_URLCONF = "drf_server.urls"
 
