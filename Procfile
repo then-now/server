@@ -1,1 +1,1 @@
-web: gunicorn drf_server.wsgi
+web: gunicorn projectname.wsgi
