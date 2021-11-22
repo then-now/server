@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-ukp+@6ch(@q)y996z+n*(16_5pl@k_b=*2_5z9x1h0rty5*%4x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -144,5 +144,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-
-SITE_ID = 1
