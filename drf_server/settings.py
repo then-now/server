@@ -45,25 +45,28 @@ INSTALLED_APPS = [
     "drf_yasg",
     "rest_framework",
     # django cors
-    # 'corsheaders',
+    'corsheaders',
     # xlsx
     "import_export",
 ]
 
 # 1. 특정 Origin만 선택적으로 허용
-# CORS_ALLOWED_ORIGINS = [
-#     "https://example.com",
-#     "https://sub.example.com",
-#     "http://localhost:8080",
-#     "http://127.0.0.1:9000"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000"
+]
 
 # 2. 모든 Origin 허용
 # CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
