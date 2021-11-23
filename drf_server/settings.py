@@ -52,8 +52,7 @@ INSTALLED_APPS = [
 
 # 1. 특정 Origin만 선택적으로 허용
 CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
+    "https://boring-swartz-cc943b.netlify.app",
     "http://localhost:8080",
     "http://127.0.0.1:9000"
 ]
